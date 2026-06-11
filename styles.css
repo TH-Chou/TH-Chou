@@ -491,6 +491,30 @@ body.is-leaving .footer {
   font-size: clamp(3rem, 8vw, 5.8rem);
 }
 
+.cn-name {
+  display: inline-block;
+  margin-left: 0.6rem;
+  color: var(--muted);
+  font-size: 0.36em;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.cn-line {
+  color: var(--muted) !important;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.cn-label {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: none;
+}
+
 .cv-section {
   display: grid;
   grid-template-columns: 13rem minmax(0, 1fr);
@@ -531,6 +555,33 @@ body.is-leaving .footer {
 }
 
 .cv-item p {
+  margin: 0.2rem 0 0;
+  color: #3f3f3f;
+}
+
+.course-grid {
+  display: grid;
+  gap: 1px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.course-grid article {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.course-grid article:first-child {
+  border-top: 0;
+}
+
+.course-grid h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+}
+
+.course-grid p {
   margin: 0.2rem 0 0;
   color: #3f3f3f;
 }
