@@ -190,27 +190,23 @@ body.is-leaving .footer {
 }
 
 .portrait {
-  display: grid;
+  display: block;
   width: min(100%, 260px);
   aspect-ratio: 4 / 5;
-  place-items: center;
   margin-bottom: 2rem;
   border: 1px solid var(--ink);
-  background:
-    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.16), transparent 28%),
-    repeating-linear-gradient(135deg, #111111 0 10px, #202020 10px 20px);
+  background: var(--panel);
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.portrait span {
-  display: grid;
-  width: 6rem;
-  height: 6rem;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.68);
-  color: var(--inverse);
-  font-weight: 700;
-  font-size: 1.25rem;
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 24%;
+  filter: grayscale(100%) contrast(1.04);
 }
 
 .profile-block {
@@ -741,12 +737,6 @@ body.is-leaving .footer {
   .portrait {
     width: 100%;
     grid-row: span 4;
-  }
-
-  .portrait span {
-    width: 3.7rem;
-    height: 3.7rem;
-    font-size: 0.9rem;
   }
 
   .profile-block {
