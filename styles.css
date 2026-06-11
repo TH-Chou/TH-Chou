@@ -488,16 +488,21 @@ body.is-leaving .footer {
 }
 
 .cv-hero h1 {
-  font-size: clamp(3rem, 8vw, 5.8rem);
+  font-size: clamp(4.1rem, 9vw, 7rem);
+}
+
+.cv-hero p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .cn-name {
-  display: inline-block;
-  margin-left: 0.6rem;
+  display: block;
+  margin: 0.65rem 0 0;
   color: var(--muted);
-  font-size: 0.36em;
+  font-size: 0.22em;
   font-weight: 500;
-  vertical-align: middle;
+  line-height: 1.1;
 }
 
 .cn-line {
@@ -553,13 +558,23 @@ body.is-leaving .footer {
 }
 
 .cv-item h3 {
-  margin: 0;
+  margin: 0 0 0.75rem;
   font-size: 1.02rem;
+  line-height: 1.45;
 }
 
 .cv-item p {
-  margin: 0.2rem 0 0;
+  margin: 0.75rem 0 0;
   color: #3f3f3f;
+}
+
+.cv-item h3 + p {
+  margin-top: 0;
+}
+
+.cv-item .cn-line {
+  margin-top: 1rem;
+  font-size: 0.98rem;
 }
 
 .publication-note {
@@ -827,7 +842,7 @@ body.is-leaving .footer {
   .intro h1,
   .page-title h1,
   .cv-hero h1 {
-    font-size: clamp(2.45rem, 10vw, 4.2rem);
+    font-size: clamp(3.1rem, 13vw, 4.2rem);
     line-height: 1;
   }
 
@@ -908,7 +923,11 @@ body.is-leaving .footer {
   .intro h1,
   .page-title h1,
   .cv-hero h1 {
-    font-size: clamp(2.25rem, 11vw, 3.2rem);
+    font-size: clamp(2.8rem, 16vw, 3.4rem);
+  }
+
+  .cv-hero p:not(.eyebrow) {
+    font-size: 0.86rem;
   }
 
   .intro h1 span {
@@ -922,6 +941,10 @@ body.is-leaving .footer {
   .course-grid p {
     font-size: 0.96rem;
     line-height: 1.75;
+  }
+
+  .cv-hero p:not(.eyebrow) {
+    font-size: 0.86rem;
   }
 
   .single-shell,
