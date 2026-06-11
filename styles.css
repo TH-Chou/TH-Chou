@@ -489,6 +489,7 @@ body.is-leaving .footer {
 
 .cv-hero h1 {
   margin-left: clamp(-1.1rem, -1.2vw, -0.35rem);
+  margin-bottom: 2rem;
   font-size: clamp(3.6rem, 7.4vw, 5.8rem);
 }
 
