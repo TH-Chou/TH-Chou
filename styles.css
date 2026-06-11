@@ -47,7 +47,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(0.5rem, 2vw, 1rem);
+  gap: 0;
   min-height: 68px;
   padding: 0 5vw;
   border-bottom: 1px solid var(--line);
@@ -59,26 +59,30 @@ a:hover {
 .brand {
   display: inline-flex;
   width: auto;
-  min-width: var(--nav-height);
+  min-width: 0;
   height: var(--nav-height);
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--inverse);
+  gap: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Noto Serif SC", Georgia, "Times New Roman", serif;
   font-weight: 700;
-  font-size: 0.78rem;
-  padding: 0 0.7rem;
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0;
+  transform: scaleY(1.12);
+  transform-origin: left center;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease;
 }
 
 .brand span {
-  color: var(--inverse);
+  color: var(--ink);
 }
 
 .brand:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px) scaleY(1.12);
   background: transparent;
   color: var(--ink);
 }
@@ -86,11 +90,12 @@ a:hover {
 .nav {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.75rem;
   color: var(--muted);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 0.82rem;
+  font-family: "Noto Serif SC", Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
   font-weight: 600;
+  line-height: 1;
 }
 
 .nav a {
@@ -98,11 +103,13 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 4.8rem;
+  min-width: 0;
   height: var(--nav-height);
-  padding: 0.32rem 0.72rem;
-  border: 1px solid transparent;
+  padding: 0 0.1rem;
+  border: 0;
   color: var(--muted);
+  transform: scaleY(1.12);
+  transform-origin: left center;
   transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
@@ -121,7 +128,7 @@ a:hover {
 
 .nav a:hover {
   color: var(--ink);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scaleY(1.12);
 }
 
 .nav a:hover::after {
@@ -130,13 +137,16 @@ a:hover {
 
 .nav a.is-active {
   order: -1;
-  border-color: var(--ink);
-  background: var(--ink);
-  color: var(--inverse);
+  padding-left: 0;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .nav a.is-active::after {
-  display: none;
+  right: 0;
+  left: 0;
+  display: block;
+  transform: scaleX(1);
 }
 
 .nav a.is-typing::before {
@@ -706,9 +716,9 @@ body.is-leaving .footer {
   }
 
   .brand {
-    min-width: var(--nav-height);
+    min-width: 0;
     height: var(--nav-height);
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   .nav {
@@ -719,9 +729,9 @@ body.is-leaving .footer {
   }
 
   .nav a {
-    min-width: 3.8rem;
+    min-width: 0;
     height: var(--nav-height);
-    padding: 0.22rem 0.45rem;
+    padding: 0 0.08rem;
   }
 
   .page-shell,
