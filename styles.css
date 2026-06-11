@@ -493,11 +493,10 @@ body.is-leaving .footer {
 
 .cn-name {
   display: inline-block;
-  margin-left: 0.25rem;
+  margin-left: 0.6rem;
   color: var(--muted);
   font-size: 0.36em;
   font-weight: 500;
-  transform: translateX(-0.08rem) var(--text-stretch);
   vertical-align: middle;
 }
 
@@ -509,10 +508,11 @@ body.is-leaving .footer {
 
 .cn-label {
   display: block;
-  margin-top: 0.25rem;
+  margin-top: 0.55rem;
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 500;
+  line-height: 1.4;
   text-transform: none;
 }
 
@@ -525,9 +525,11 @@ body.is-leaving .footer {
 }
 
 .cv-section h2 {
+  display: grid;
+  gap: 0.35rem;
   margin: 0;
   font-size: 1rem;
-  line-height: 1.35;
+  line-height: 1.7;
   text-transform: uppercase;
 }
 
