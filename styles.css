@@ -191,9 +191,9 @@ body.is-leaving .footer {
 
 .portrait {
   display: block;
-  width: min(100%, 260px);
-  aspect-ratio: 4 / 5;
-  margin-bottom: 2rem;
+  width: min(100%, 180px);
+  aspect-ratio: 1;
+  margin-bottom: 1.4rem;
   border: 1px solid var(--ink);
   background: var(--panel);
   box-shadow: var(--shadow);
@@ -205,7 +205,7 @@ body.is-leaving .footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 24%;
+  object-position: 50% 19%;
   filter: grayscale(100%) contrast(1.04);
 }
 
@@ -664,7 +664,7 @@ body.is-leaving .footer {
   .profile-panel {
     position: static;
     display: grid;
-    grid-template-columns: minmax(130px, 190px) minmax(0, 1fr);
+    grid-template-columns: minmax(120px, 140px) minmax(0, 1fr);
     gap: 1.2rem 1.4rem;
     align-items: start;
   }
@@ -730,7 +730,7 @@ body.is-leaving .footer {
   }
 
   .profile-panel {
-    grid-template-columns: minmax(96px, 120px) minmax(0, 1fr);
+    grid-template-columns: minmax(86px, 96px) minmax(0, 1fr);
     gap: 0.85rem 1rem;
   }
 
