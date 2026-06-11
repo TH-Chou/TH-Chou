@@ -9,6 +9,9 @@
   --inverse: #f6f6f2;
   --shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
   --nav-height: 36px;
+  --serif: "Noto Serif SC", Georgia, "Times New Roman", serif;
+  --text-stretch: scaleY(1.08);
+  --nav-stretch: scaleY(1.22);
 }
 
 * {
@@ -27,7 +30,7 @@ body {
     linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
     var(--bg);
   background-size: 42px 42px;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--serif);
   line-height: 1.65;
 }
 
@@ -38,6 +41,23 @@ a {
 
 a:hover {
   color: #000000;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+span,
+time,
+.label,
+.eyebrow,
+.meta,
+.button,
+.tag-row span,
+.skill-grid span {
+  transform: var(--text-stretch);
+  transform-origin: left center;
 }
 
 .site-header {
@@ -67,12 +87,12 @@ a:hover {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-family: "Noto Serif SC", Georgia, "Times New Roman", serif;
+  font-family: var(--serif);
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 1;
   padding: 0;
-  transform: scaleY(1.22);
+  transform: var(--nav-stretch);
   transform-origin: left center;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease;
 }
@@ -82,7 +102,7 @@ a:hover {
 }
 
 .brand:hover {
-  transform: translateY(-1px) scaleY(1.22);
+  transform: translateY(-1px) var(--nav-stretch);
   background: transparent;
   color: var(--ink);
 }
@@ -92,7 +112,7 @@ a:hover {
   align-items: center;
   gap: 0.75rem;
   color: var(--muted);
-  font-family: "Noto Serif SC", Georgia, "Times New Roman", serif;
+  font-family: var(--serif);
   font-size: 1.05rem;
   font-weight: 600;
   line-height: 1;
@@ -108,7 +128,7 @@ a:hover {
   padding: 0 0.1rem;
   border: 0;
   color: var(--muted);
-  transform: scaleY(1.22);
+  transform: var(--nav-stretch);
   transform-origin: left center;
   transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
@@ -128,7 +148,7 @@ a:hover {
 
 .nav a:hover {
   color: var(--ink);
-  transform: translateY(-1px) scaleY(1.22);
+  transform: translateY(-1px) var(--nav-stretch);
 }
 
 .nav a:hover::after {
@@ -274,7 +294,7 @@ body.is-leaving .footer {
   display: block;
   margin-top: 0.55rem;
   color: var(--muted);
-  font-family: "Noto Serif SC", serif;
+  font-family: var(--serif);
   font-size: clamp(1.45rem, 3vw, 2.25rem);
   font-weight: 500;
 }
