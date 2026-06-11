@@ -493,10 +493,11 @@ body.is-leaving .footer {
 
 .cn-name {
   display: inline-block;
-  margin-left: 0.6rem;
+  margin-left: 0.25rem;
   color: var(--muted);
   font-size: 0.36em;
   font-weight: 500;
+  transform: translateX(-0.08rem) var(--text-stretch);
   vertical-align: middle;
 }
 
