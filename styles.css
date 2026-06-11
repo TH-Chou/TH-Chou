@@ -488,7 +488,8 @@ body.is-leaving .footer {
 }
 
 .cv-hero h1 {
-  font-size: clamp(4.1rem, 9vw, 7rem);
+  margin-left: clamp(-1.1rem, -1.2vw, -0.35rem);
+  font-size: clamp(3.6rem, 7.4vw, 5.8rem);
 }
 
 .cv-hero p:not(.eyebrow) {
@@ -842,7 +843,8 @@ body.is-leaving .footer {
   .intro h1,
   .page-title h1,
   .cv-hero h1 {
-    font-size: clamp(3.1rem, 13vw, 4.2rem);
+    margin-left: -0.35rem;
+    font-size: clamp(2.8rem, 11vw, 3.7rem);
     line-height: 1;
   }
 
@@ -923,7 +925,8 @@ body.is-leaving .footer {
   .intro h1,
   .page-title h1,
   .cv-hero h1 {
-    font-size: clamp(2.8rem, 16vw, 3.4rem);
+    margin-left: -0.2rem;
+    font-size: clamp(2.45rem, 13vw, 3rem);
   }
 
   .cv-hero p:not(.eyebrow) {
