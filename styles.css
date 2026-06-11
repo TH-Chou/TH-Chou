@@ -192,7 +192,7 @@ body.is-leaving .footer {
 .portrait {
   display: block;
   width: min(100%, 180px);
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
   margin-bottom: 1.4rem;
   border: 1px solid var(--ink);
   background: var(--panel);
@@ -206,7 +206,6 @@ body.is-leaving .footer {
   height: 100%;
   object-fit: cover;
   object-position: 50% 19%;
-  filter: grayscale(100%) contrast(1.04);
 }
 
 .profile-block {
