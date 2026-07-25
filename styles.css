@@ -597,6 +597,23 @@ body.is-leaving .footer {
   font-size: 0.88rem;
 }
 
+.highlight-note {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  background: #eaf4f8;
+  color: #222222 !important;
+}
+
+.inline-link {
+  border-bottom: 1px solid currentColor;
+  color: #111111;
+  font-weight: 700;
+}
+
+.inline-link:hover {
+  color: #27596a;
+}
+
 .course-grid {
   display: grid;
   gap: 1px;
