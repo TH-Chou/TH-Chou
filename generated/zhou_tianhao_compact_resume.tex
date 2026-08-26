@@ -1,0 +1,160 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[margin=0.48in,top=0.32in,bottom=0.28in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\pagestyle{empty}
+
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica Neue}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Heiti SC}
+\hypersetup{colorlinks=true,urlcolor=black}
+
+\definecolor{accent}{HTML}{27596A}
+\definecolor{soft}{HTML}{F7F8F8}
+\definecolor{paperblue}{HTML}{EAF4F8}
+\definecolor{line}{HTML}{2E5D6B}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.0}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0pt,topsep=0.5pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{1pt}{\color{line}\titlerule[1.2pt]}]
+\titlespacing*{\section}{0pt}{4pt}{3pt}
+\newcommand{\sep}{\hspace{0.55em}{\color{accent}|}\hspace{0.55em}}
+\newcommand{\role}[1]{\textbf{#1}}
+\newcommand{\blueblock}[1]{\colorbox{paperblue}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}}
+\newcommand{\infoblock}[2]{%
+  \begingroup\setlength{\fboxsep}{1.5pt}%
+  \noindent\colorbox{paperblue}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{\color{accent}#1}#2}%
+  }\endgroup\vspace{0.5pt}%
+}
+\newcommand{\tight}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\project}[4]{
+  \noindent\fcolorbox{black}{white}{
+    \begin{minipage}{0.972\linewidth}
+      \vspace{2pt}
+      \begin{tabularx}{\linewidth}{@{}X r@{}}
+        \textbf{#1} & \textbf{#2}
+      \end{tabularx}
+      \vspace{-2pt}
+      \tight{
+        \item \role{方向：}#3
+        \item \role{内容与工作：}#4
+      }
+      \vspace{-2pt}
+    \end{minipage}
+  }\vspace{2pt}
+}
+\newcommand{\researchblock}[6]{
+  \noindent\fcolorbox{black}{white}{
+    \begin{minipage}{0.972\linewidth}
+      \vspace{1.5pt}
+      \begin{tabularx}{\linewidth}{@{}X r@{}}
+        \textbf{#1} & \textbf{#2}
+      \end{tabularx}
+      \vspace{-2.5pt}
+      \tight{
+        \item \role{方向：}#3
+        \item \role{内容与工作：}#4
+        \item \role{承担工作：}#5
+        \item \blueblock{\role{成果与进展：}#6}
+      }
+      \vspace{-1.5pt}
+    \end{minipage}
+  }\vspace{1.5pt}
+}
+\newcommand{\projectcompact}[4]{
+  \noindent\fcolorbox{black}{white}{
+    \begin{minipage}{0.972\linewidth}
+      \vspace{1.5pt}
+      \begin{tabularx}{\linewidth}{@{}X r@{}}
+        \textbf{#1} & \textbf{#2}
+      \end{tabularx}
+      \vspace{-2.5pt}
+      \tight{\item \role{方向与实践：}#3；#4}
+      \vspace{-1.5pt}
+    \end{minipage}
+  }\vspace{1.5pt}
+}
+
+\begin{document}
+\fontsize{8.65}{9.25}\selectfont
+\enlargethispage{18pt}
+\noindent
+\begin{minipage}[t]{0.79\linewidth}
+  \vspace{0pt}
+  {\fontsize{24}{27}\selectfont\bfseries 周天昊}\\[3pt]
+  {\fontsize{11.2}{12.4}\selectfont 天津大学软件工程学院 · 软件工程本科}\\[2pt]
+  2022.8--2027.6 \sep 天津\\[2pt]
+  电话/微信：+86 13832875716 \sep 邮箱：\href{mailto:zhoutianhao@tju.edu.cn}{zhoutianhao@tju.edu.cn}\\[2pt]
+  GitHub：\href{https://github.com/TH-Chou}{TH-Chou} \sep Gitee：\href{https://gitee.com/xenogene}{xenogene} \sep 个人博客：\href{https://th-chou.github.io/TH-Chou/index.html}{TH-Chou（点击即可访问）}\\[2pt]
+  \\[-1.5pt]
+  \infoblock{研究兴趣：}{区块链共识与可信计算、分布式系统、软件工程与 AI 工程实践}
+  \infoblock{成绩排名：}{GPA 3.82/4.00，平均分 90，专业排名 17/126（前 13.49\%）}
+  \infoblock{英语水平：}{CET-6 595，CET-4 623}
+  \infoblock{核心课程：}{自然语言处理 98、数据结构 94.8、算法 96、计算机系统实践 99、设计模式 99、概率论 95}
+  \infoblock{个人特点：}{第 3 学期由建筑相关专业转入计算机，已完成课程补修；数理基础扎实，科研与工程实践并重}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.16\linewidth}
+  \vspace{0.38cm}
+  \raggedleft
+  \makebox[\linewidth][r]{\includegraphics[width=3.30cm,height=4.61cm]{generated/resume_photo.jpg}\hspace{0.25cm}}
+\end{minipage}
+
+\section{科研与项目经历}
+\researchblock{天津大学 TankLab RA｜分布式系统与部分同步/异步共识协议}{2025.04--至今}
+{分布式系统、区块链 BFT 共识、部分同步/异步协议；目标是在复杂网络条件下提升共识协议的安全性、可靠性、吞吐与确认延迟表现。}
+{参与设计异步 DAG-BFT 共识协议：将当前块 QC 嵌入同 proposer 下一轮 block，避免 standalone certificate 额外传播，使 certified round 正常路径由 3 个消息延迟缩短至 2 个；通过 vote round 与 latest-known references 校验嵌入式 QC 的因果历史，防止 Byzantine proposer 伪造 unsupported future-round votes；采用四轮 wave、common coin 选主和 two-link same-proposer certified chain 完成 anchor 决策与异步排序。}
+{负责/参与协议阅读与对比、核心机制推导、Rust 代码实现与测试、Narwhal-derived 代码库维护、异步/部分同步协议同栈复现、WAN/延迟仿真、吞吐/延迟指标分析、图表整理与论文实验撰写支撑；重点关注 certified round latency、wave latency、commit probability、leader utilization 及高传播延迟下的吞吐稳定性。}
+{{\xeCJKsetup{CJKecglue={}}相关工作在高传播延迟场景下相较 Tusk/Wahoo 具有更优吞吐与确认延迟，并能在保持异步安全性的同时更快生成可排序 certified blocks；一篇 \href{https://dblp.org/db/conf/icde}{ICDE2027}（CCF-A）在投，一篇 \href{https://dblp.org/db/conf/infocom}{IEEE INFOCOM 2027}（CCF-A）在投。}}
+
+\researchblock{天津大学 TankLab RA｜Agent 共识与多主体协同}{2026.4--至今}
+{Agent 共识、多主体协作与可验证执行；研究 agent 间状态同步、任务分解与提议、投票确认、异常节点容忍及执行记录验证，关注部分同步网络中多主体协作的安全性、可靠性与决策一致性。}
+{将 BFT 共识机制拓展到多 agent 协同决策语境，围绕 agent 角色划分、任务提议、消息传播、状态维护、证据聚合与结果提交，推进部分同步网络下的 agent 共识建模、协议流程设计和实验验证；分析节点失联、延迟抖动、恶意或低可信 agent 对共识收敛、决策一致性和可验证执行记录的影响。}
+{参与 agent 共识相关论文阅读、问题抽象、方案讨论与实验设计，尝试将传统 BFT 的安全性与活性分析迁移到多主体任务协同场景，整理 agent 状态、投票证据、任务结果与执行日志之间的可验证关系。}
+{{\xeCJKsetup{CJKecglue={}}一篇 \href{https://dblp.org/db/conf/acl}{ACL} 2027（CCF-A）筹备。}}
+
+\project{社会科学数字化研究RA：天津市十百千千人学者调研｜王苗团队}{转专业前}
+{GIS、数据清洗、双减政策社会影响分析}
+{师从天津大学建筑学院风景园林系王苗团队，使用 GIS 与数据清洗分析方法研究“双减”政策背景下中小学周边开放空间活化潜力。\\[-1pt]\blueblock{形成科研成果：\textit{Research on the Activate Potential of Open Spaces Around Primary and Secondary Schools Under the Background of the ``Double Reduction'' Policy}.}}
+
+\projectcompact{软件工程实践｜复杂微服务系统与在线评测系统}{2025--2026}
+{微服务、开源软件开发、团队协作}{完成复杂微服务系统与在线评测系统，参与需求分析、模块实现、接口联调、测试与仓库维护；代码：\href{https://gitee.com/xenogene/code_online_judging_system}{code\_online\_judging\_system}}
+
+\projectcompact{数据分析与可视化｜犯罪率分析项目}{2024--2025}
+{数据清洗、统计分析、交互式可视化}{完成犯罪率数据预处理、区域/类别对比分析与图表展示，形成可复现的数据分析流程；代码：\href{https://gitee.com/xenogene/data_analysis_visualization_practice.git}{data\_analysis\_visualization\_practice}}
+
+\projectcompact{自然语言处理｜ReLU 相关神经网络实验}{2026}
+{文本预处理、神经网络与模型评测}{完成 ReLU 相关 NLP 实验、模型训练、误差分析与报告撰写，强化机器学习实验复现与分析能力}
+
+\projectcompact{计算机视觉/计算机可视化｜视觉计算课程项目}{2026}
+{图像处理、视觉表示与可视化}{完成视觉计算课程项目与结果展示，结合前端开发和图形表达能力形成可展示工程作品；代码：\href{https://gitee.com/xenogene/computer_visualization_practice.git}{computer\_visualization\_practice}}
+
+\section{竞赛获奖与荣誉}
+\noindent\colorbox{paperblue}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep\relax}
+    \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{本科生国家奖学金} & 2025\\
+    \textbf{天津大学三好学生二等奖学金（3/129）}，优秀共青团员 & 2023\\
+    \textbf{数字化植物培养与模块化种植栽培技术}：省级大创项目，中期审查优秀（Top 20\%），已结题 & 2023.10--2024.07\\
+    \textbf{体育荣誉}：马拉松、半程马拉松相关奖项；马拉松\kern-0.12em\&\kern-0.12em半程马拉松国家二级运动员 & --\\
+    \end{tabularx}
+  \end{minipage}%
+}
+
+\section{技能}
+\textbf{编程与工程：} Python、C++、Go、Rust、TypeScript、Linux、Git、LaTeX；熟悉项目测试、代码阅读、工程调试与文档协作。\\
+\textbf{研究与课程：} 区块链共识、BFT 协议、可信计算、自然语言处理、数据分析与可视化、计算机视觉/可视化；高分课程含自然语言处理 98、计算机系统实践 99、设计模式 99、算法 96、数据结构 94.8、概率论 95、离散数学 91、形式化方法 92。\\
+\textbf{软技能：} 英文阅读与写作能力较强，具备跨学科学习、团队协作、科研探索和 AI-assisted coding 能力；曾任学生会综合事务部部长等。
+\end{document}
