@@ -58,10 +58,10 @@ if (mapElement && window.L) {
     { padding: [18, 18] },
   );
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-    attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-    maxZoom: 19,
-    subdomains: "abcd",
+  L.tileLayer("https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=7", {
+    attribution: "&copy; 高德地图",
+    maxZoom: 18,
+    subdomains: "1234",
   }).addTo(map);
 
   const addCity = (city, international = false) => {
