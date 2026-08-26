@@ -741,7 +741,7 @@ body.is-leaving .footer {
 
 .travel-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 15rem;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
   padding: 2rem 0 2.2rem;
   border-bottom: 1px solid var(--line);
@@ -760,40 +760,6 @@ body.is-leaving .footer {
   color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.7;
-}
-
-.travel-index {
-  min-width: 0;
-  padding: 0.2rem 0 0 1.5rem;
-  border-left: 1px solid var(--line);
-}
-
-.travel-index .label {
-  margin-bottom: 1.2rem;
-}
-
-.city-list {
-  display: grid;
-  gap: 0.65rem;
-}
-
-.city-list p {
-  margin: 0;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid var(--line);
-  font-size: 0.86rem;
-  line-height: 1.55;
-}
-
-.city-list strong {
-  display: block;
-  font-size: 0.92rem;
-}
-
-.city-list span {
-  color: var(--muted);
-  font-size: 0.77rem;
-  line-height: 1.65;
 }
 
 .travel-photo-grid {
@@ -1047,7 +1013,7 @@ body.is-leaving .footer {
   }
 
   .portrait {
-    grid-row: span 4;
+    grid-row: span 3;
     margin: 0;
   }
 
@@ -1155,7 +1121,7 @@ body.is-leaving .footer {
 
   .portrait {
     width: 100%;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   .intro h1,
