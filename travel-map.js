@@ -44,38 +44,82 @@ const internationalCities = [
   ["东京", 35.6762, 139.6503],
 ];
 
+const bounds = { left: 40, top: 35, width: 920, height: 520 };
+const svgNamespace = "http://www.w3.org/2000/svg";
+
+const outlines = [
+  {
+    className: "map-outline",
+    points: [[97, 41], [91, 43], [88, 47], [103, 47], [112, 45], [121, 44], [129, 47], [135, 45], [133, 39], [130, 36], [126, 34], [123, 31], [119, 28], [116, 24], [111, 22], [108, 18], [105, 20], [104, 24], [101, 26], [98, 28], [94, 29], [91, 31], [88, 34], [91, 36], [95, 37]],
+  },
+  {
+    className: "map-outline secondary",
+    points: [[126, 38], [129, 43], [130, 39], [128, 35]],
+  },
+  {
+    className: "map-outline secondary",
+    points: [[131, 34], [135, 36], [140, 42], [145, 44], [146, 40], [142, 34], [138, 31], [134, 31]],
+  },
+  {
+    className: "map-outline secondary",
+    points: [[106, 23], [110, 22], [111, 18], [109, 13], [106, 10], [104, 8], [102, 12], [104, 17]],
+  },
+  {
+    className: "map-outline secondary",
+    points: [[99, 20], [103, 21], [105, 17], [103, 12], [100, 10], [99, 14]],
+  },
+];
+
+function project(latitude, longitude) {
+  return {
+    x: bounds.left + ((longitude - 86) / 59) * bounds.width,
+    y: bounds.top + ((47 - latitude) / 47) * bounds.height,
+  };
+}
+
+function makeSvgElement(tag, attributes = {}) {
+  const element = document.createElementNS(svgNamespace, tag);
+  Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+  return element;
+}
+
+function drawOutline(group, points, className) {
+  const pathData = points
+    .map(([longitude, latitude], index) => {
+      const { x, y } = project(latitude, longitude);
+      return `${index === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`;
+    })
+    .join(" ");
+
+  group.appendChild(makeSvgElement("path", { class: className, d: `${pathData} Z` }));
+}
+
+function drawCity(group, city, international = false) {
+  const [name, latitude, longitude] = city;
+  const { x, y } = project(latitude, longitude);
+  const cityGroup = makeSvgElement("g", { class: international ? "city international" : "city" });
+  const marker = makeSvgElement("circle", {
+    class: international ? "map-marker international" : "map-marker",
+    cx: x.toFixed(1),
+    cy: y.toFixed(1),
+    r: international ? "5" : "4",
+  });
+  const label = makeSvgElement("text", {
+    class: international ? "map-label international" : "map-label",
+    x: (x + 7).toFixed(1),
+    y: (y - 7).toFixed(1),
+  });
+  label.textContent = name;
+  cityGroup.append(marker, label);
+  group.appendChild(cityGroup);
+}
+
 const mapElement = document.querySelector("#east-asia-map");
 
-if (mapElement && window.L) {
-  const map = L.map(mapElement, {
-    scrollWheelZoom: false,
-    zoomControl: true,
-  }).setView([28, 116], 3.7);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors",
-    maxZoom: 8,
-  }).addTo(map);
-
-  const addCity = (city, international = false) => {
-    const [name, latitude, longitude] = city;
-    const marker = L.marker([latitude, longitude], {
-      icon: L.divIcon({
-        className: `city-marker-wrapper${international ? " international" : ""}`,
-        html: '<span class="city-marker-dot"></span>',
-        iconAnchor: [5, 5],
-        iconSize: [10, 10],
-      }),
-    }).addTo(map);
-
-    marker.bindTooltip(name, {
-      className: "city-label",
-      direction: "top",
-      offset: [0, -4],
-      permanent: true,
-    });
-  };
-
-  cities.forEach((city) => addCity(city));
-  internationalCities.forEach((city) => addCity(city, true));
+if (mapElement) {
+  const outlineGroup = mapElement.querySelector("#map-outlines");
+  const cityGroup = mapElement.querySelector("#map-cities");
+  outlines.forEach(({ points, className }) => drawOutline(outlineGroup, points, className));
+  cities.forEach((city) => drawCity(cityGroup, city));
+  internationalCities.forEach((city) => drawCity(cityGroup, city, true));
 }
