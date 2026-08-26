@@ -8,17 +8,24 @@ function navText(link) {
 function typeInto(link, text, delay = 0) {
   link.setAttribute("aria-label", link.dataset.route.replace("/", "") || "home");
   link.classList.add("is-typing");
-  link.textContent = "";
+  let label = link.querySelector(".nav-label");
+  if (!label) {
+    label = document.createElement("span");
+    label.className = "nav-label";
+    link.textContent = "";
+    link.appendChild(label);
+  }
+  label.textContent = "";
 
   if (reduceMotion) {
-    link.textContent = text;
+    label.textContent = text;
     link.classList.remove("is-typing");
     return;
   }
 
   [...text].forEach((char, index) => {
     window.setTimeout(() => {
-      link.textContent += char;
+      label.textContent += char;
       if (index === text.length - 1) {
         link.classList.remove("is-typing");
       }

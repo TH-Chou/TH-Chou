@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
   <body data-page="travel">
     <header class="site-header" id="top">
@@ -34,32 +35,7 @@
 
       <section class="travel-layout" aria-label="East Asia travel map and city index">
         <div>
-          <svg
-            id="east-asia-map"
-            class="east-asia-map"
-            viewBox="0 0 1000 600"
-            role="img"
-            aria-labelledby="map-title map-description"
-          >
-            <title id="map-title">East Asia travel map</title>
-            <desc id="map-description">A simplified black and white outline of East Asia with Chinese provincial capitals and selected cities marked.</desc>
-            <rect class="map-bg" x="0" y="0" width="1000" height="600" />
-            <g class="map-grid" aria-hidden="true">
-              <line x1="40" y1="160" x2="960" y2="160" />
-              <line x1="40" y1="290" x2="960" y2="290" />
-              <line x1="40" y1="420" x2="960" y2="420" />
-              <line x1="240" y1="35" x2="240" y2="555" />
-              <line x1="440" y1="35" x2="440" y2="555" />
-              <line x1="640" y1="35" x2="640" y2="555" />
-              <line x1="840" y1="35" x2="840" y2="555" />
-            </g>
-            <g id="map-outlines" aria-hidden="true"></g>
-            <g id="map-cities"></g>
-            <g class="map-legend" aria-hidden="true">
-              <text x="55" y="565">● China capitals</text>
-              <text x="210" y="565">○ selected cities</text>
-            </g>
-          </svg>
+          <div id="east-asia-map" class="east-asia-map" role="img" aria-label="East Asia travel map"></div>
           <p class="map-note">Black marks show provincial capitals and municipalities in China. White marks show selected cities beyond China.</p>
         </div>
         <aside class="travel-index">
@@ -95,6 +71,7 @@
       <span>© 2026 周天昊</span>
       <a href="#top">Back to top</a>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="travel-map.js"></script>
     <script src="nav.js"></script>
   </body>
