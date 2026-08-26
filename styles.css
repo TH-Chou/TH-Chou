@@ -177,6 +177,10 @@ time,
   transform: translateY(1px);
 }
 
+.nav a.is-active .nav-label {
+  font-style: italic;
+}
+
 .nav a.is-typing::before {
   width: 1px;
   height: 1em;
