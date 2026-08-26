@@ -207,12 +207,12 @@ time,
   display: grid;
   grid-template-columns: minmax(220px, 290px) minmax(0, 760px);
   gap: clamp(1.75rem, 4vw, 3.8rem);
-  padding: clamp(1.8rem, 4vw, 3.4rem) 0 2.8rem;
+  padding: clamp(1.9rem, 4vw, 3.2rem) 0 3rem;
 }
 
 .single-shell,
 .cv-shell {
-  padding: clamp(1.8rem, 4vw, 3.2rem) 0 2.8rem;
+  padding: clamp(1.9rem, 4vw, 3.2rem) 0 3rem;
 }
 
 .single-shell {
@@ -335,7 +335,7 @@ body.is-leaving .footer {
 
 .page-title {
   min-height: 220px;
-  padding-bottom: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2.2rem, 4vw, 3.2rem);
   border-bottom: 1px solid var(--line-strong);
 }
 
@@ -377,7 +377,7 @@ body.is-leaving .footer {
 
 .timeline-item,
 .project {
-  padding: 0.95rem 0;
+  padding: 1.2rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -410,7 +410,6 @@ body.is-leaving .footer {
 
 .project-rich {
   grid-template-columns: 4rem minmax(0, 1fr) auto;
-  padding: 1.25rem 0;
 }
 
 .project-mark {
@@ -473,7 +472,7 @@ body.is-leaving .footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 1rem;
-  padding: 0.72rem 0;
+  padding: 1.2rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -801,8 +800,7 @@ body.is-leaving .footer {
 }
 
 .travel-page .page-title {
-  min-height: 250px;
-  padding-bottom: 3.2rem;
+  min-height: 220px;
 }
 
 .leaflet-container {
@@ -852,7 +850,7 @@ body.is-leaving .footer {
   display: grid;
   grid-template-columns: 8.4rem minmax(0, 1fr);
   gap: 1rem;
-  padding: 0.8rem 0;
+  padding: 1.2rem 0;
 }
 
 .timeline-dense .timeline-item h3 {
@@ -891,7 +889,7 @@ body.is-leaving .footer {
   gap: 1rem;
   width: min(1180px, 90vw);
   margin: 0 auto;
-  padding: 1.25rem 0 2rem;
+  padding: 1.5rem 0 2.4rem;
   color: var(--muted);
   font-size: 0.78rem;
 }
