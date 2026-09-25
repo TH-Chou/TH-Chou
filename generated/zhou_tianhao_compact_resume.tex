@@ -117,7 +117,7 @@
 {分布式系统、区块链 BFT 共识、部分同步/异步协议；目标是在复杂网络条件下提升共识协议的安全性、可靠性、吞吐与确认延迟表现。}
 {参与设计异步 DAG-BFT 共识协议：将当前块 QC 嵌入同 proposer 下一轮 block，避免 standalone certificate 额外传播，使 certified round 正常路径由 3 个消息延迟缩短至 2 个；通过 vote round 与 latest-known references 校验嵌入式 QC 的因果历史，防止 Byzantine proposer 伪造 unsupported future-round votes；采用四轮 wave、common coin 选主和 two-link same-proposer certified chain 完成 anchor 决策与异步排序。}
 {负责/参与协议阅读与对比、核心机制推导、Rust 代码实现与测试、Narwhal-derived 代码库维护、异步/部分同步协议同栈复现、WAN/延迟仿真、吞吐/延迟指标分析、图表整理与论文实验撰写支撑；重点关注 certified round latency、wave latency、commit probability、leader utilization 及高传播延迟下的吞吐稳定性。}
-{{\xeCJKsetup{CJKecglue={}}相关工作在高传播延迟场景下相较 Tusk/Wahoo 具有更优吞吐与确认延迟，并能在保持异步安全性的同时更快生成可排序 certified blocks；一篇 \href{https://dblp.org/db/conf/icde}{ICDE2027}（CCF-A）在投，一篇 \href{https://dblp.org/db/conf/infocom}{IEEE INFOCOM 2027}（CCF-A）在投。}}
+{{\xeCJKsetup{CJKecglue={}}相关工作在高传播延迟场景下相较 Tusk/Wahoo 具有更优吞吐与确认延迟，并能在保持异步安全性的同时更快生成可排序 certified blocks；一篇 \href{https://dblp.org/db/conf/nsdi}{NSDI2027}（CCF-A）在投，一篇 \href{https://dblp.org/db/conf/infocom}{IEEE INFOCOM 2027}（CCF-A）在投。}}
 
 \researchblock{天津大学 TankLab RA｜Agent 共识与多主体协同}{2026.4--至今}
 {Agent 共识、多主体协作与可验证执行；研究 agent 间状态同步、任务分解与提议、投票确认、异常节点容忍及执行记录验证，关注部分同步网络中多主体协作的安全性、可靠性与决策一致性。}
